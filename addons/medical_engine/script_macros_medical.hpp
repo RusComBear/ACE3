@@ -196,7 +196,7 @@
 #define GET_OPEN_WOUNDS(unit)       (unit getVariable [VAR_OPEN_WOUNDS, createHashMap])
 #define GET_BANDAGED_WOUNDS(unit)   (unit getVariable [VAR_BANDAGED_WOUNDS, createHashMap])
 #define GET_STITCHED_WOUNDS(unit)   (unit getVariable [VAR_STITCHED_WOUNDS, createHashMap])
-#define GET_DAMAGE_THRESHOLD(unit)  (unit getVariable [QEGVAR(medical,damageThreshold), [EGVAR(medical,AIDamageThreshold),EGVAR(medical,playerDamageThreshold)] select (isPlayer unit)])
+#define GET_DAMAGE_THRESHOLD(unit)  (unit getVariable [QEGVAR(medical,damageThreshold), [EGVAR(medical,AIDamageThreshold),EGVAR(medical,playerDamageThreshold)] select ([unit] call EFUNC(medical_engine,conditionIsConsideredPlayer))])
 
 // The following function calls are defined here just for consistency
 #define GET_BLOOD_LOSS(unit)        ([unit] call EFUNC(medical_status,getBloodLoss))
