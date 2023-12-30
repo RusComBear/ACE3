@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 /*
  * Author: RusComBear
  * Condition for unit to be considered player for medical system
